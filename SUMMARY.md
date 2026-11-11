@@ -1,4 +1,4 @@
-How to run. the app
+# How to run the app
 
 From the project root, make sure Docker Desktop is running, then start the app:
 
@@ -8,47 +8,47 @@ To stop the app while preserving database data:
 
 docker compose down
 
-The commands used
+# The commands used
 
-# Build all project images
+## Build all project images
 docker compose build
 
-# Start all services in detached mode
+## Start all services in detached mode
 docker compose up -d
 
-# List this project's running containers
+## List this project's running containers
 docker compose ps
 
-# Follow only backend logs (press Ctrl+C to stop following)
+## Follow only backend logs (press Ctrl+C to stop following)
 docker compose logs -f server
 
-# Open a shell in the backend container
+## Open a shell in the backend container
 docker compose exec server sh
 
-# Run a SQL query inside the PostgreSQL container
+## Run a SQL query inside the PostgreSQL container
 docker compose exec db psql -U postgres -d taskboard -c "SELECT * FROM tasks;"
 
-# Restart only the backend
+## Restart only the backend
 docker compose restart server
 
-# Rebuild and recreate only the frontend
+## Rebuild and recreate only the frontend
 docker compose build client
 docker compose up -d --no-deps client
 
-# Stop and remove containers while preserving database records
+## Stop and remove containers while preserving database records
 docker compose down
 
-# List Docker images
+## List Docker images
 docker image ls
 
-# Show dangling (untagged) images
+## Show dangling (untagged) images
 docker image ls -f dangling=true
 
-# Review Docker disk usage and reclaimable space
+## Review Docker disk usage and reclaimable space
 docker system df -v
 
 
-Docker Challenge Troubleshooting & Resolution Summary
+# Docker Challenge Troubleshooting & Resolution Summary
 
 Here’s a summary of the errors encountered during setup and how each was resolved:
 

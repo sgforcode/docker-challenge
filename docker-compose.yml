@@ -20,6 +20,7 @@ services:
 
   server:
     build: ./server
+    restart: always
     container_name: pern_server
     ports:
       - "3000:3000"
@@ -31,21 +32,17 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    volumes:
-      - ./server:/app # Live bind mount
-      - /app/node_modules
-
+        
+    
   client:
     build: ./client
     container_name: pern_client
     ports:
-      - "5173:80"
+      - "80:80"
     depends_on:
       - server
-    volumes:
-      - ./client:/app # Live bind mount
-      - /app/node_modules # linked your local code directory directly into the container.
-    
+    restart: always
+   
 
 volumes:
   postgres_data: 

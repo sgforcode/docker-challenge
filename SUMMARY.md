@@ -1,5 +1,12 @@
 How to run. the app
 
+From the project root, make sure Docker Desktop is running, then start the app:
+
+Open http://localhost in your browser. The API health check is at http://localhost:3000/health.
+
+To stop the app while preserving database data:
+
+docker compose down
 
 The commands used
 
